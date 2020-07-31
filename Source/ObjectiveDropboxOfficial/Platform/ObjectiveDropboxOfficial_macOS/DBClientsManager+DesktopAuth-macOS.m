@@ -9,6 +9,7 @@
 #import "DBLoadingStatusDelegate.h"
 #import "DBOAuthDesktop-macOS.h"
 #import "DBOAuthManager.h"
+#import "DBScopeRequest+Protected.h"
 #import "DBTransportDefaultConfig.h"
 
 @implementation DBClientsManager (DesktopAuth)
@@ -28,7 +29,7 @@
                               controller:(nullable NSViewController *)controller
                    loadingStatusDelegate:(nullable id<DBLoadingStatusDelegate>)loadingStatusDelegate
                                  openURL:(void (^_Nonnull)(NSURL *))openURL
-                            scopeRequest:(nullable DBScopeRequest*)scopeRequest {
+                            scopeRequest:(nullable DBScopeRequest *)scopeRequest {
   [self db_authorizeFromControllerDesktop:sharedApplication
                                controller:controller
                     loadingStatusDelegate:loadingStatusDelegate
